@@ -5,6 +5,7 @@ from lbrc_flask.database import db
 from alembic.config import Config
 from alembic import command
 from faker import Faker
+from {{cookiecutter.project_slug}}.model import *
 
 fake = Faker()
 

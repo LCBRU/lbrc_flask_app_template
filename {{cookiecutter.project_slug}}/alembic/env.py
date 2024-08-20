@@ -6,6 +6,8 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
+from lbrc_flask.database import db
+from {{cookiecutter.project_slug}} import *
 
 # Load environment variables from '.env' file.
 load_dotenv()
@@ -13,6 +15,7 @@ load_dotenv()
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+config.set_main_option('sqlalchemy.url', os.environ["SQLALCHEMY_DATABASE_URI"])
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -29,8 +32,6 @@ target_metadata = None
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
-
-config.set_main_option('sqlalchemy.url', os.environ["SQLALCHEMY_DATABASE_URI"])
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.
