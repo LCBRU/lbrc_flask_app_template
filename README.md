@@ -1,4 +1,4 @@
-# Template
+# NIHR Leicester BRC Flask Application Template
 
 ## Running Jobs
 
