@@ -9,7 +9,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # Load environment variables from '.env' file.
 load_dotenv()
 
-from template import create_app
+from {{cookiecutter.project_slug}} import create_app
 
 application = create_app()
 application.app_context().push()

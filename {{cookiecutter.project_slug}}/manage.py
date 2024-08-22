@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from migrate.versioning.shell import main
-from template.config import BaseConfig
+from {{cookiecutter.project_slug}}.config import BaseConfig
 
 if __name__ == "__main__":
     main(repository="migrations", url=BaseConfig.SQLALCHEMY_DATABASE_URI, debug="True")
