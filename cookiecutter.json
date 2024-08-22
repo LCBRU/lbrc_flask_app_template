@@ -4,6 +4,12 @@
   "project_name": "Project name",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Enter a short description of the project.",
-  "_copy_without_render": [
-    "*.html"
-]}
+  "database_host": "localhost",
+  "database_name": "{{cookiecutter.project_slug}}",
+  "database_username": "database_username",
+  "database_password": "database_password",
+  "application_username": "{{ cookiecutter.full_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "application_password": "application_password",
+  "_copy_without_render": ["*.html"],
+  "_extensions": ["cookiecutter.extensions.RandomStringExtension"]
+}
