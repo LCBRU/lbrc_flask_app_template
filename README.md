@@ -32,3 +32,16 @@ or
 cookiecutter https://github.com/LCBRU/lbrc_flask_app_template.git
 ```
 ## Setting up the new Project
+1. Change directory into the project directory
+2. Create a python virtual environment using the command `python3 -m venv .venv`
+3. Activate the python virtual environment using the command `. .venv/bin/activate`
+4. Upgrade *pip*: `pip install --upgrade pip`
+5. Install *pip-tools*: `pip install pip-tools`
+6. Create a requirements file from `requirements.in` by running the command: `pip-compile`
+7. Install the requirements using the command: `pip install -r requirements.txt`
+8. Create a blank database using the details entered into cookie cutter
+9. Create test data by running `python create_test_db.py`
+10. Run the application: `python app.py`
+
+
+lias create_venv='python3.11 -m venv .venv && . .venv/bin/activate && python -m  && pip install pip-tools'

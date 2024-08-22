@@ -24,13 +24,20 @@
         {% for u in users.items %}
             <li>
                 <header class="flex_two_left_grow">
-                    <div>
-                        <div class="flex_header">
-                            <h3>{{u.full_name}}</h3>
-                        </div>
-                    </div>
+                    <h3>{{u.full_name}}</h3>
+                    <nav class="link_list">
+                        <a title="Edit user {{ u.full_name }}" href="javascript:;" hx-get="{{ url_for('ui.edit', id=u.id) }}" hx-target="body" hx-swap="beforeend" class="icon edit"></a>
+                    </nav>
                 </header>
-            </li>
+                <dl class="columns">
+                    <dt>Name</dt>
+                    <dd>{{ u.full_name }}</dd>
+                    <dt>Email</dt>
+                    <dd>{{ u.email }}</dd>
+                    <dt>Last Logged In</dt>
+                    <dd>{{ last_login_at | datetime_humanize }}</dd>
+                </dl>
+           </li>
         {% endfor %}
     </ul>
 
