@@ -31,3 +31,4 @@ or
 ```bash
 cookiecutter https://github.com/LCBRU/lbrc_flask_app_template.git
 ```
+## Setting up the new Project
