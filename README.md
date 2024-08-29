@@ -42,6 +42,3 @@ cookiecutter https://github.com/LCBRU/lbrc_flask_app_template.git
 8. Create a blank database using the details entered into cookie cutter
 9. Create test data by running `python create_test_db.py`
 10. Run the application: `python app.py`
-
-
-lias create_venv='python3.11 -m venv .venv && . .venv/bin/activate && python -m  && pip install pip-tools'
