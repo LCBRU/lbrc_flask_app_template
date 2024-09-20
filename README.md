@@ -9,27 +9,15 @@ To install cookie cutter run the command:
 pip3 install --user cookiecutter
 ```
 ## Generate Project from Template
-There are two ways to create a project from this template.
-### Download This Repository
-Down this repository using the command:
+Cookiecutter downloads the template from GitHub and uses it to create
+your new project.  Use the link shown in the repositories from the `Code` button.
+
+![alt text](github_links.png)
 ```bash
-gh repo clone LCBRU/lbrc_flask_app_template
-```
-or
-```bash
-git clone https://github.com/LCBRU/lbrc_flask_app_template.git
-```
-Then run the command:
-```bash
-cookiecutter lbrc_flask_app_template/
-```
-### Create Project from GitHub
-```bash
-cookiecutter gh:LCBRU/lbrc_flask_app_template
-```
-or
-```bash
+# Using the https github link
 cookiecutter https://github.com/LCBRU/lbrc_flask_app_template.git
+# Using the the GitHub CLI link
+cookiecutter gh:LCBRU/lbrc_flask_app_template
 ```
 ## Setting up the new Project
 1. Change directory into the project directory
