@@ -9,27 +9,15 @@ To install cookie cutter run the command:
 pip3 install --user cookiecutter
 ```
 ## Generate Project from Template
-There are two ways to create a project from this template.
-### Download This Repository
-Down this repository using the command:
+Cookiecutter downloads the template from GitHub and uses it to create
+your new project.  Use the link shown in the repositories from the `Code` button.
+
+![alt text](github_links.png)
 ```bash
-gh repo clone LCBRU/lbrc_flask_app_template
-```
-or
-```bash
-git clone https://github.com/LCBRU/lbrc_flask_app_template.git
-```
-Then run the command:
-```bash
-cookiecutter lbrc_flask_app_template/
-```
-### Create Project from GitHub
-```bash
-cookiecutter gh:LCBRU/lbrc_flask_app_template
-```
-or
-```bash
+# Using the https github link
 cookiecutter https://github.com/LCBRU/lbrc_flask_app_template.git
+# Using the the GitHub CLI link
+cookiecutter gh:LCBRU/lbrc_flask_app_template
 ```
 ## Project Prerequisites
 The project is dependent upon LDAP.  This is installed differently depending on the operating system.
@@ -39,10 +27,6 @@ Run the following commands:
 sudo apt-get install libldap2-dev
 sudo apt-get install libsasl2-dev
 ```
-### Windows
-After the virtual environment has been created and activated in step 4 (below), run the following steps:
-1. Download the appropriate wheel file from the releases page of the [https://github.com/cgohlke/python-ldap-build] repository into the project directory
-2. Install the wheel file using the command `pip install python_ldap...whl`, using the name of the file downloaded.
 ## Setting up the new Project
 1. Change directory into the project directory
 2. Create a python virtual environment using the command `python3 -m venv .venv`
@@ -50,10 +34,16 @@ After the virtual environment has been created and activated in step 4 (below), 
 4. Upgrade *pip*: `pip install --upgrade pip`
 5. Install *pip-tools*: `pip install pip-tools`
 6. Create a requirements file from `requirements.in` by running the command: `pip-compile`
-7. Install the requirements using the command: `pip install -r requirements.txt`
-8. Create a blank database using the details entered into cookie cutter
-9. Create test data by running `python create_test_db.py`
-10. Run the application: `python app.py`
+7. If you are using Windows, you will first need to install the LDAP wheel for windows.  See **LDAP on Windows** below
+8. Install the requirements using the command: `pip install -r requirements.txt`
+9. Cookiecutter sets up the database connection information for MySQL.  If you are going to use SQLite, change `SQLALCHEMY_DATABASE_URI` in the `.env` file to a valid SQLite connection string.  (Examples of SQLite connection strings are given in the `.env` file.)
+9. Create a blank database using the details entered into cookie cutter
+10. Create test data by running `python create_test_db.py`
+11. Run the application: `python app.py`
+### LDAP on Windows
+After the virtual environment has been created and activated in step 4 (below), run the following steps:
+1. Download the appropriate wheel file from the releases page of the [https://github.com/cgohlke/python-ldap-build] repository into the project directory
+2. Install the wheel file using the command `pip install python_ldap...whl`, using the name of the file downloaded.
 ## Structure of the Created Project
 ### Libraries
 The application uses a variety of libraries.  The main ones are listed here or in the sections below:
