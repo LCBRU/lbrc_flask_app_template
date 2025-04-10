@@ -25,12 +25,7 @@ def index():
     if search_form.search.data:
         q = q.filter(User.email.like(f'%{search_form.search.data}%'))
 
-    users = db.paginate(
-        select=q,
-        page=search_form.page.data,
-        per_page=5,
-        error_out=False,
-    )
+    users = db.paginate(select=q)
 
     return render_template(
         "ui/index.html",
